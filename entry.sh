@@ -14,7 +14,7 @@ cp /opt/curator/files/actions/${ACTION}.yml /tmp/action.yml
 # Replace any values in that file
 sed -i s/_THRESHOLD_/${THRESHOLD}/g /tmp/action.yml
 
-echo '---------RUNNING WITH CONFIGUATION---------'
+echo '---------RUNNING WITH CONFIGURATION---------'
 cat /tmp/config.yml
 
 echo
