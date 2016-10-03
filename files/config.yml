@@ -1,0 +1,22 @@
+client:
+  hosts:
+    - _ES_HOST_
+  port: _ES_PORT_
+  url_prefix: _ES_PREFIX_
+  use_ssl: False
+  certificate:
+  client_cert:
+  client_key:
+  aws_key:
+  aws_secret_key:
+  aws_region:
+  ssl_no_validate: False
+  http_auth:
+  timeout: 30
+  master_only: False
+
+logging:
+  loglevel: INFO
+  logfile:
+  logformat: default
+  blacklist: ['elasticsearch', 'urllib3']
