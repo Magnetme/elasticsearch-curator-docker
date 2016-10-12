@@ -8,11 +8,19 @@ sed -i s/_ES_HOST_/${ES_HOST}/g /tmp/config.yml
 sed -i s/_ES_PORT_/${ES_PORT}/g /tmp/config.yml
 sed -i s/_ES_PREFIX_/${ES_PREFIX}/g /tmp/config.yml
 
+# Set default vars
+if [ -z ${INDEX_PREFIX+x} ];
+then
+	INDEX_PREFIX=logstash-
+fi
+
+
 # Pick the correct action and copy it
 cp /opt/curator/files/actions/${ACTION}.yml /tmp/action.yml
 
 # Replace any values in that file
 sed -i s/_THRESHOLD_/${THRESHOLD}/g /tmp/action.yml
+sed -i s/_INDEX_PREFIX_/${INDEX_PREFIX}/g /tmp/action.yml
 
 echo '---------RUNNING WITH CONFIGURATION---------'
 cat /tmp/config.yml
