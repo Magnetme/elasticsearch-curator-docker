@@ -18,7 +18,7 @@ actions:
     - filtertype: age
       source: name
       direction: older
-      timestring: '%Y.%m.%d'
+      timestring: '_TIMESTRING_'
       unit: days
       unit_count: _THRESHOLD_
       exclude:

@@ -13,7 +13,10 @@ if [ -z ${INDEX_PREFIX+x} ];
 then
 	INDEX_PREFIX=logstash-
 fi
-
+if [ -z ${TIMESTRING+x} ];
+then
+        TIMESTRING='%Y.%m.%d'
+fi
 
 # Pick the correct action and copy it
 cp /opt/curator/files/actions/${ACTION}.yml /tmp/action.yml
@@ -21,6 +24,7 @@ cp /opt/curator/files/actions/${ACTION}.yml /tmp/action.yml
 # Replace any values in that file
 sed -i s/_THRESHOLD_/${THRESHOLD}/g /tmp/action.yml
 sed -i s/_INDEX_PREFIX_/${INDEX_PREFIX}/g /tmp/action.yml
+sed -i s/_TIMESTRING_/${TIMESTRING}/g /tmp/action.yml
 
 echo '---------RUNNING WITH CONFIGURATION---------'
 cat /tmp/config.yml
