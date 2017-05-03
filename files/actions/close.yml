@@ -7,7 +7,7 @@ actions:
       prefixed indices.
     options:
       max_num_segments: 1
-      continue_if_exception: False
+      ignore_empty_list: True
       disable_action: False
     filters:
     - filtertype: pattern
